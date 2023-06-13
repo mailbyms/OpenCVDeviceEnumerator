@@ -75,7 +75,7 @@ std::map<int, Device> DeviceEnumerator::getDevicesMap(const GUID deviceClass)
 			hr = pPropBag->Read(L"DevicePath", &var, 0);
 			if (FAILED(hr)) {
 				VariantClear(&var);
-				continue; // If it fails we continue with next device
+				// continue; // If it fails we continue with next device // Mike, devicePath is not a must
 			}
 			else {
 				devicePath = ConvertBSTRToMBS(var.bstrVal);
